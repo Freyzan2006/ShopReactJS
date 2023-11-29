@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Foldit:wght@200&family=Instrument+Serif:ital@1&family=Montserrat:ital,wght@0,600;1,300&family=Oswald&family=Roboto&family=Roboto+Condensed&family=Roboto+Slab:wght@900&family=Sigmar&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--main_font);
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+}
+
+:root {
+    --main_font:  'Montserrat', sans-serif;
+    --color_text: aliceblue;
+    --color_bg: #3a3939;
+    --color_text_active: rgb(180, 121, 11);
+}
+
+body {
+    background-color: var(--color_bg);
+    color: var(--color_text);
+    font-weight: 300;
+    cursor: default;
+    
+}
+
+.wrapper {
+    width: 1140px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+header {
+    position: relative;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+header ul.nav {
+    float: right;
+}
+
+
+header ul.nav li {
+    display: inline;
+    margin-right: 50px;
+    gap: 30px;
+    cursor: pointer;
+    transition: opacity 500ms;
+}
+
+header ul.nav li:hover {
+    opacity: 0.5;
+    color: var(--color_text_active);
+}
+
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+    color: var(--color_text_active);
+    transform: scale(1.5);
+}
+
+header .shop-cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    padding: 20px;
+    background-color: rgba(255, 217, 0, 0.438);
+    box-shadow: 7px 6px 22px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 6px 22px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 6px 22px 0px rgba(0,0,0,0.75);
+    z-index: 1000;
+    border-radius: 10px 0 10px 0;
+    padding-bottom: 0;
+}
+
+header .shop-cart .empty h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #3a3939;
+    border-radius: 30px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+
+}
+
+header .shop-cart .item img {
+    width: 70px;
+    float: left;
+    margin-left: 20px;
+}
+
+header .shop-cart .item .delete-icon {
+    color: #ca5252;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+    color: red;
+    transform: scale(1.5);
+}
+
+header .shop-cart .summa {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .itme h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+header .shop-cart .item b {
+    color: var(--color_text_active);
+    font-weight: 600;
+    
+}
+
+header .presentation {
+    margin: 50px 0;
+    background-image: url(./img/header/BG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #bcbcbc;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+header .presentation::after {
+    content: "Лучшие товары для вашего дома";
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color_text);
+}
+
+header .presentation::before {
+    content: "По низким ценам";
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color_text);
+}
+
+.categories div {
+    display: inline;
+    background: #f2f2ff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    color: #3a3939;
+    text-shadow: none;
+    border: solid 1px transparent;
+    transition: all 500ms ease;
+}
+
+.categories div:hover {
+    cursor: pointer; 
+    border-color: var(--color_text_active);
+    transform: scale(110%);
+}
+
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 51, 51, 0.795);
+    z-index: 9999;
+    overflow: auto;
+}
+
+.full-item>div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #333;
+    border-radius: 100px;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background-color: #6b6868;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+main .item img,
+.full-item img {
+    width: 100%;
+    min-height: 300px;
+    border-radius: 10px 10px;
+    transition: 0.5s;
+}
+
+main .item img:hover,
+.full-item img:hover {
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+main h2, .full-item h2,
+main p, .full-item p,
+main b, .full-item b {
+    margin: 10px 20px;
+    color: aliceblue;
+}
+
+main b,
+.full-item b {
+    color: gold;
+}
+
+main .add-to-cart,
+.full-item .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ca5252;
+    width: 35px;
+    height: 35;
+    text-align: center;
+    line-height: 35px;
+    color: aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+    text-shadow: none;
+    transition: 0.5s;
+    border: 1px solid #ca5252;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.full-item .add-to-cart {
+    right: 100px;
+    bottom: 20px;
+}
+
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
+    transform: scale(105%) rotate(360deg);
+    color: gold;
+    border-color: gold;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
